@@ -2,7 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 html {
-  background-color: lightgray;
+  /* background-color: lightgray; */
+  background-image: url("/img/background.jpg");
+  background-repeat: no-repeat;
+  /* background-position: center; */
   font-family: "Lexend", sans-serif;
 }
 
@@ -12,7 +15,8 @@ html {
   font-size: 26px;
   font-weight: 600;
   margin: 0;
-  background-color: rgb(235, 207, 172);
+  padding: 2px;
+  background-color: rgb(235, 199, 171);
 }
 
 h2 {
@@ -39,7 +43,10 @@ h2 {
 .wrapper > * {
   padding: 1em;
   border-radius: 10px;
-  background-color: white;
+  /* background-color: white; */
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.107);
 }
 
 .monday {
@@ -77,12 +84,12 @@ h2 {
   margin-top: 5px 0px;
   padding: 5px;
   border-radius: 8px;
-  background-color: rgb(62, 191, 118);
+  background-color: rgb(96, 170, 153);
   color: #fff;
 }
 
 .block-button-lection {
-  margin-top: 5px 0px;
+  margin-top: 5px;
   padding: 5px;
   border-radius: 8px;
   background-color: #fc94f5;
@@ -126,7 +133,8 @@ h2 {
 .button-link:hover,
 .button-link:focus,
 .button-link:active {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); */
+  box-shadow: 0 0 20px rgba(20, 75, 130, 0.5);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
