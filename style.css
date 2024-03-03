@@ -1,11 +1,14 @@
 @import "reset.css";
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-html {
+body {
   /* background-color: lightgray; */
-  background-image: url("/img/background.jpg");
-  background-repeat: no-repeat;
+  /* background-image: url("/img/background2.jpg"); */
+  /* background-repeat: no-repeat; */
   /* background-position: center; */
+  background: linear-gradient(45deg, #d2001a, #7462ff, #daa520, #dda0dd);
+  background-size: 300% 300%;
+  animation: color 25s ease-in-out infinite;
   font-family: "Lexend", sans-serif;
 }
 
@@ -160,5 +163,17 @@ h2 {
       "wd "
       "th"
       "fr";
+  }
+}
+
+@keyframes color {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
