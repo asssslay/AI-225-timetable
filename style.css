@@ -29,58 +29,74 @@ h2 {
 .container {
   margin: 0 auto;
   padding: 20px 40px;
+  max-width: 1400px;
 }
 
 .wrapper {
   padding: 30px;
   margin: 0 auto;
-  gap: 5px;
   display: grid;
-  text-align: center;
-}
-
-.wrapper > * {
-  padding: 1em;
-  border-radius: 10px;
-  /* background-color: white; */
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(20px);
-  border: 2px solid rgba(255, 255, 255, 0.107);
-}
-
-.monday {
-  grid-area: md;
-}
-.tuesday {
-  grid-area: ts;
-}
-
-.wednesday {
-  grid-area: wd;
-}
-
-.thursday {
-  grid-area: th;
-}
-
-.friday {
-  grid-area: fr;
-}
-
-.wrapper {
   grid-template-columns: repeat(6, 1fr);
   grid-auto-rows: minmax(200px, auto);
   grid-template-areas:
     "md md ts ts wd wd"
     ". th th fr fr .";
+  gap: 20px;
+}
+
+.wrapper > * {
+  padding: 1em;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.107);
+}
+
+/* Grid areas */
+.md {
+  grid-area: md;
+}
+.ts {
+  grid-area: ts;
+}
+.wd {
+  grid-area: wd;
+}
+.th {
+  grid-area: th;
+}
+.fr {
+  grid-area: fr;
+}
+
+/* Day container and content */
+.day-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.day-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.odd-week,
+.even-week,
+.common-week {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px;
 }
 
 .name-class {
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 .block-button-practice {
-  margin-top: 5px 0px;
+  margin-top: 5px;
   padding: 5px;
   border-radius: 8px;
   background-color: rgb(96, 170, 153);
@@ -96,11 +112,28 @@ h2 {
 }
 
 .block-button-lab {
-  margin-top: 5px 0px;
+  margin-top: 5px;
   padding: 5px;
   border-radius: 8px;
   background-color: #8b8989;
   color: #fff;
+}
+
+.friday-content {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.friday-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50px;
+}
+
+.attendance-indicator {
+  text-align: center;
+  padding: 8px;
+  text-transform: uppercase;
 }
 
 .time {
@@ -109,11 +142,16 @@ h2 {
 
 .meet-login {
   margin: 5px 5px 15px;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
 }
 
 .button {
   margin: 20px;
+  text-align: center;
 }
+
 .button-link {
   background: #1e90ff;
   padding: 10px;
@@ -132,15 +170,21 @@ h2 {
 .button-link:hover,
 .button-link:focus,
 .button-link:active {
-  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); */
   box-shadow: 0 0 20px rgba(20, 75, 130, 0.5);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
 
-/* Style for the week toggle button */
+/* Week info section */
+.week-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
 .toggle-week-btn {
-  margin: 20px auto;
   padding: 10px 20px;
   font-size: 18px;
   font-weight: 600;
@@ -152,7 +196,6 @@ h2 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition-duration: 0.3s;
   transition-property: box-shadow, transform;
-  display: block;
 }
 
 .toggle-week-btn:hover {
@@ -160,10 +203,8 @@ h2 {
   transform: scale(1.05);
 }
 
-/* Style for the current week display */
 .current-week {
   text-align: center;
-  margin: 20px auto;
   padding: 10px;
   font-size: 16px;
   font-weight: 600;
@@ -171,55 +212,52 @@ h2 {
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(20px);
   border: 2px solid rgba(255, 255, 255, 0.08);
-  /* background-color: #ffebcc; */
   border-radius: 8px;
-  max-width: 300px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Style for the current date display */
 .current-date {
   font-size: 18px;
   font-weight: 600;
   color: #333;
-  text-align: center; /* Center text within its grid cell */
+  text-align: center;
 }
 
-/* Layout adjustments for the .week-info section */
-.week-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
-  align-items: center; /* Center items vertically within each grid cell */
-  justify-items: center; /* Center items horizontally within each grid cell */
-  padding: 5px;
-}
-
+/* Responsive design */
 @media (max-width: 800px) {
   .week-info {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    text-align: center;
+    flex-direction: column;
+    gap: 15px;
   }
+
   .wrapper {
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(100px, auto);
     grid-template-areas:
-      "md ts "
+      "md ts"
       "wd th"
       "fr fr";
+    padding: 15px;
   }
 }
 
 @media (max-width: 600px) {
   .wrapper {
     grid-template-columns: 1fr;
-    grid-auto-rows: minmax(100px, auto);
     grid-template-areas:
       "md"
       "ts"
-      "wd "
+      "wd"
       "th"
       "fr";
+    padding: 10px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .week-info {
+    padding: 10px;
   }
 }
 
