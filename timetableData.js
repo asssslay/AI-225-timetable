@@ -42,6 +42,7 @@ const timetableData = [
         type: "Лекція",
         time: "11:40-13:15",
         link: "https://us02web.zoom.us/j/4209706766?pwd=YVhZSHVYWGJOVkZLc2t0VFlkbDdxQT09&omn=85498519147",
+        attendance: true,
       },
       {
         weekType: "common",
