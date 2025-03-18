@@ -89,6 +89,7 @@ const timetableData = [
         type: "Лабораторна робота",
         time: "9:50-11:25",
         link: "https://us02web.zoom.us/j/75815387400?pwd=NmlqdGZmbW5yK1BuQmFiZXB1S2lKQT09",
+        attendance: true,
       },
       {
         weekType: "odd",
