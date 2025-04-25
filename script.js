@@ -36,7 +36,6 @@ function createClassItem(item) {
 
 // Function to create HTML for a day's schedule
 function createDaySchedule(dayData) {
-  // Map Ukrainian day names to CSS grid area names
   const dayToGridArea = {
     Понеділок: "md",
     Вівторок: "ts",
@@ -49,7 +48,6 @@ function createDaySchedule(dayData) {
   let html = `<div class="${gridArea} day-container">
                 <div class="title">${dayData.day}</div>`; // Заголовок дня
 
-  // Особливий випадок для п’ятниці
   if (dayData.day === "Пʼятниця") {
     html += `<div class="friday-content">
                 <img src="${dayData.items[0].img}" alt="Friday image" class="friday-image">
@@ -61,10 +59,10 @@ function createDaySchedule(dayData) {
       html += createClassItem(item);
     });
 
-    html += `</div>`; // Закриття day-content
+    html += `</div>`;
   }
 
-  html += `</div>`; // Закриття day-container
+  html += `</div>`;
   return html;
 }
 
@@ -85,7 +83,6 @@ document.getElementById("toggleWeekBtn").addEventListener("click", function () {
   const evenWeekElements = document.querySelectorAll(".even-week");
   const isOddWeekVisible = oddWeekElements[0].style.display !== "none";
 
-  // Toggle visibility of odd and even week containers
   oddWeekElements.forEach(
     (el) => (el.style.display = isOddWeekVisible ? "none" : "block")
   );

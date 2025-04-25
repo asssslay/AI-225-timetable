@@ -96,7 +96,7 @@ const timetableData = [
         name: "Прогр. моб. прист.",
         type: "Лабораторна робота",
         time: "11:40-13:15",
-        link: "https://bit.ly/hodovychenko_zoom",
+        link: "https://us04web.zoom.us/j/3850184769?pwd=NUpkcWhqTlpwUlVYSkhGbXB4bWM1Zz09",
       },
       {
         weekType: "even",
