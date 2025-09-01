@@ -76,7 +76,7 @@ const timetableData = [
     items: [
       {
         weekType: "common",
-        name: "Екологія (ВД17-03)",
+        name: "Проєктування ІС",
         type: "Лекція",
         time: "9:50-11:25",
         link: "",

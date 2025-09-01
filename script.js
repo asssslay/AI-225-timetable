@@ -48,19 +48,27 @@ function createDaySchedule(dayData) {
   let html = `<div class="${gridArea} day-container">
                 <div class="title">${dayData.day}</div>`; // Заголовок дня
 
-  if (dayData.day === "Пʼятниця") {
-    html += `<div class="friday-content">
-                <img src="${dayData.items[0].img}" alt="Friday image" class="friday-image">
-             </div>`;
-  } else {
-    html += `<div class="day-content">`;
+  html += `<div class="day-content">`;
 
-    dayData.items.forEach((item) => {
-      html += createClassItem(item);
-    });
+  dayData.items.forEach((item) => {
+    html += createClassItem(item);
+  });
 
-    html += `</div>`;
-  }
+  html += `</div>`;
+
+  // if (dayData.day === "Пʼятниця") {
+  //   html += `<div class="friday-content">
+  //               <img src="${dayData.items[0].img}" alt="Friday image" class="friday-image">
+  //            </div>`;
+  // } else {
+  //   html += `<div class="day-content">`;
+
+  //   dayData.items.forEach((item) => {
+  //     html += createClassItem(item);
+  //   });
+
+  //   html += `</div>`;
+  // }
 
   html += `</div>`;
   return html;
